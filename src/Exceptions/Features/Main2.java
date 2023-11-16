@@ -16,12 +16,24 @@ public class Main2 {
 
         deleteBook(bookRepository, 1);
         deleteBook(bookRepository, 8);
+
+        findBookByTitle(bookRepository, "SDA");
+        findBookByTitle(bookRepository, "nuexista");
     }
 
     private static void deleteBook(BookRepository bookRepository, int ID) {
         System.out.println("Deleting book with ID " + ID);
         try {
             bookRepository.removeBook(ID);
+        } catch (NoBookFoundException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private static void findBookByTitle(BookRepository bookRepository, String bookName) {
+        System.out.println("Searching book by title " + bookName);
+        try {
+            System.out.println(bookRepository.getBookByName(bookName));
         } catch (NoBookFoundException e) {
             System.out.println(e.getMessage());
         }

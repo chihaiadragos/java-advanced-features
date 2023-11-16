@@ -29,6 +29,16 @@ public class BookRepository {
         }
     }
 
+    public Book getBookByName(String bookName) throws NoBookFoundException {
+        for (Book book : books) {
+            if (book.getTitle().equals(bookName)) {
+                return book;
+            }
+        }
+        throw new NoBookFoundException("No book with title: " + bookName);
+
+    }
+
     @Override
     public String toString() {
         return "BookRepository{" +
