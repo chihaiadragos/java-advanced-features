@@ -21,5 +21,20 @@ public class Main {
             System.out.println("Index out of bound");
         }
         System.out.println("After try-catch");
+
+        try {
+            simulateException();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static void simulateException() throws Exception {
+        System.out.println("something");
+        throw new Exception("something went wrong");
     }
 }
