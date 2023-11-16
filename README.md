@@ -1,0 +1,12 @@
+Study the Java - Advanced Features module from SDA wich include:
+-Class taxonomy in Java
+-OOP
+-Exceptions
+-Annotations
+-Basics of reflections
+-Collections
+-Generic types in Java
+-i/o operations
+-Concurrent and parallel programming
+-Functional programming
+-Modules
