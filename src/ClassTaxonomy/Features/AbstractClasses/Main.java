@@ -1,2 +1,4 @@
-package ClassTaxonomy.Features.AbstractClasses;public class Main {
+package ClassTaxonomy.Features.AbstractClasses;
+
+public class Main {
 }

@@ -1,2 +1,4 @@
-package ClassTaxonomy.Features.InnerClasses;public class Main {
+package ClassTaxonomy.Features.InnerClasses;
+
+public class Main {
 }
