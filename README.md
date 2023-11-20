@@ -1,4 +1,4 @@
-Study the Java - Advanced Features module from SDA wich include:
+Study the Java  Advanced Features:
 -Class taxonomy in Java
 -OOP
 -Exceptions
