@@ -2,8 +2,8 @@ package ClassTaxonomy.Features.AbstractClasses;
 
 public abstract class Animal {
 
-    private String name;
-    private int age;
+    protected String name;
+    protected int age;
 
     public Animal(String name, int age) {
         this.name = name;
@@ -27,4 +27,11 @@ public abstract class Animal {
     }
     public abstract void makeSound();
 
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

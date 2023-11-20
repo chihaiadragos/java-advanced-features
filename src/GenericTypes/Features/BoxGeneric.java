@@ -1,20 +1,22 @@
+package GenericTypes.Features;
+
 public class BoxGeneric<T> {
-    private int lenght;
+    private int length;
     private int width;
     private T content;
 
-    public BoxGeneric(int lenght, int width, T content) {
-        this.lenght = lenght;
+    public BoxGeneric(int length, int width, T content) {
+        this.length = length;
         this.width = width;
         this.content = content;
     }
 
     public int getLenght() {
-        return lenght;
+        return length;
     }
 
     public void setLenght(int lenght) {
-        this.lenght = lenght;
+        this.length = lenght;
     }
 
     public int getWidth() {
@@ -36,7 +38,7 @@ public class BoxGeneric<T> {
     @Override
     public String toString() {
         return "BoxGeneric{" +
-                "lenght=" + lenght +
+                "lenght=" + length +
                 ", width=" + width +
                 ", content=" + content +
                 '}';
