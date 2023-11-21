@@ -6,8 +6,9 @@ public class Book extends Media{
     private String author;
     private int numberOfPages;
 
-    public Book(String title, LocalDate publicationDate, int numberOfPages) {
+    public Book(String title, LocalDate publicationDate, String author, int numberOfPages) {
         super(title, publicationDate);
+        this.author = author;
         this.numberOfPages = numberOfPages;
     }
 
