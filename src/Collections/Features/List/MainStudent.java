@@ -46,11 +46,23 @@ public class MainStudent {
         Comparator<Student> nameAndAgeComparator = new Comparator<Student>() {
             @Override
             public int compare(Student student1, Student student2) {
-                if (student1.getName().equals(student2.getName())) {
-                    return 0;
+//                VARIANTA 1
+//                if (student1.getName().equals(student2.getName())) {
+//                    return Integer.compare(student1.getAge(), student2.getAge());
+//                } else {
+//                    return student1.getName().compareTo(student2.getName());
+
+                //VARIANTA 2
+                int result = student1.getName().compareTo(student2.getName());
+                if (result == 0) {
+                    return Integer.compare(student1.getAge(), student2.getAge());
                 }
+                return 0;
             }
-        }
+        };
+
+        students.sort(nameAndAgeComparator);
+        System.out.println(students);
     }
 
 }
