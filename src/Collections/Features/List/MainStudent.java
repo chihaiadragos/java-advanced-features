@@ -35,6 +35,7 @@ public class MainStudent {
         };
 
         students.sort(nameComparator);
+        // Collections.sort(students, nameComparator); <- echivalent linie 37
         System.out.println(students);
 
         Comparator<Student> nameComparatorDesc = nameComparator.reversed();
