@@ -8,9 +8,9 @@ public enum TemperatureConvert {
     F_K('F', 'K', new FahrenheitToKelvinConverter()),
     K_F('K', 'F', new KelvinToFahrenheitConverter());
 
-    char inputTemperatureUnit;
-    char outputTemperatureUnit;
-    Converter converter;
+    final char inputTemperatureUnit;
+    final char outputTemperatureUnit;
+    final Converter converter;
 
 
     TemperatureConvert(char inputTemperatureUnit, char outputTemperatureUnit, Converter converter) {
