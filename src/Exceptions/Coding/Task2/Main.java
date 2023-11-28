@@ -37,4 +37,11 @@ public class Main {
         System.out.println("something");
         throw new Exception("something went wrong");
     }
+
+    public void arman(int input) {
+        System.out.println("input");
+    }
+    public static void arman(String input) {
+        System.out.println("input");
+    }
 }
