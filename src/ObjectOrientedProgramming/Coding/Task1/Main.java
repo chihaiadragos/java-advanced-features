@@ -1,6 +1,8 @@
 package ObjectOrientedProgramming.Coding.Task1;
 
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Point2D point2D1= new Point2D(1.5f, 10.8f);
@@ -13,5 +15,6 @@ public class Main {
         System.out.println(point2D2);
         System.out.println(point3D1);
         System.out.println(point3D2);
+        System.out.println(Arrays.toString(point2D1.getXY()));
     }
 }
