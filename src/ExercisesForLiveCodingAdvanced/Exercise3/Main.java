@@ -21,7 +21,7 @@ public class Main {
         StringBuilder stringBuilder;
 
         while (new_Iterator.hasNext()) {
-            Map.Entry<String, Integer> newMap = (Map.Entry<String, Integer>) new_Iterator.next();
+            Map.Entry<String, Integer> newMap = new_Iterator.next();
             stringBuilder = new StringBuilder("Key: " + newMap.getKey() + ", Values: " + newMap.getValue());
             if (new_Iterator.hasNext()) {
                 stringBuilder.append(",");
