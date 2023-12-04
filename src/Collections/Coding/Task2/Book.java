@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
-public class Book {
+public class Book implements Comparable<Book>{
     private String title;
     private int price;
     private LocalDate releaseDate;
@@ -81,5 +81,19 @@ public class Book {
                 ", authors=" + authors +
                 ", genre=" + genre +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Book book) {
+        int titleComparison = this.title.compareTo(book.title);
+        if (titleComparison == 0) {
+            return Integer.compare(this.price, book.price);
+        }
+        return titleComparison;
+        //             SAU
+//        if (this.title.equals(book.title)) {
+//            return Integer.compare(this.price, book.price);
+//        }
+//        return this.title.compareTo(book.title);
     }
 }

@@ -1,7 +1,7 @@
 package Collections.Coding.Task2;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +16,7 @@ public class Main {
         Book book3 = new Book("Java",     420, LocalDate.of(2012, 1,  28), List.of(author1),                   Genre.ANIME);
         Book book4 = new Book("Titanic",  15,  LocalDate.of(1981, 6,  18), List.of(author2),                   Genre.COMEDY);
         Book book5 = new Book("Spring",   700, LocalDate.of(2023, 10, 3),  List.of(author1, author2, author3), Genre.ACTION);
+        Book book6 = new Book("Spring",   700, LocalDate.of(2023, 10, 3),  List.of(author1, author2, author3), Genre.ACTION);
 
         BookService bookService = new BookService();
         bookService.addBook(book1);
@@ -23,6 +24,7 @@ public class Main {
         bookService.addBook(book3);
         bookService.addBook(book4);
         bookService.addBook(book5);
+        bookService.addBook(book6);
 
         System.out.println("All books are: ");
         bookService.printAllBooks();
@@ -60,5 +62,41 @@ public class Main {
         for (Author author : bookService.getAllAuthors()) {
             System.out.println(author);
         }
+        System.out.println();
+
+        System.out.println("Books with a specific number of authors:");
+        print(bookService.getBookByNumberOfAuthors(3));
+
+        System.out.println("Book sorted asc by price:");
+        bookService.sortBooksByPriceAsc();
+        bookService.printAllBooks();
+        System.out.println();
+
+        System.out.println("Book sorted desc by price:");
+        bookService.sortBooksByPriceDesc();
+        bookService.printAllBooks();
+
+        System.out.println("Book sorted asc by title:");
+        bookService.sortByTitleAsc();
+        bookService.printAllBooks();
+        System.out.println();
+
+        System.out.println("Book sorted desc by title:");
+        bookService.sortByTitleDesc();
+        bookService.printAllBooks();
+        System.out.println();
+
+        System.out.println("Authors with all books title:");
+        Map<Author, Set<String>> authorsWithBookTitle = bookService.getAuthorsWithBookTitles();
+        for (Author author : authorsWithBookTitle.keySet()) {
+            System.out.println(author.getFirstName() + " " + author.getLastName() + " has books: ");
+            System.out.println(Arrays.toString(authorsWithBookTitle.get(author).toArray()));
+        }
+    }
+    private static void print(Collection<Book> books) {
+        for (Book book : books) {
+            System.out.println(book);
+        }
+        System.out.println();
     }
 }

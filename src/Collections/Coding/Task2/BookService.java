@@ -1,15 +1,14 @@
 package Collections.Coding.Task2;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class BookService {
     private List<Book> books;
+    private BookPriceComparator bookPriceComparator;
 
     public BookService() {
         this.books = new ArrayList<>();
+        this.bookPriceComparator = new BookPriceComparator();
     }
 
     public void addBook(Book book) {
@@ -96,5 +95,44 @@ public class BookService {
             authors.addAll(book.getAuthors());
         }
         return authors;
+    }
+
+    public Set<Book> getBookByNumberOfAuthors(int numberOfAuthors) {
+        Set<Book> booksByNumberOfAuthors = new HashSet<>();
+        for (Book book : books) {
+            if (book.getAuthors().size() == numberOfAuthors) {
+                booksByNumberOfAuthors.add(book);
+            }
+        }
+        return booksByNumberOfAuthors;
+    }
+
+    public void sortBooksByPriceAsc() {
+        books.sort(bookPriceComparator);
+    }
+
+    public void sortBooksByPriceDesc() {
+        books.sort(bookPriceComparator.reversed());
+    }
+
+    public void sortByTitleAsc() {
+        Collections.sort(books);
+    }
+
+    public void sortByTitleDesc() {
+        books.sort(Collections.reverseOrder());
+    }
+
+    public Map<Author, Set<String>> getAuthorsWithBookTitles() {
+        Map<Author, Set<String>> authorsWithBookTitles = new HashMap<>();
+        for (Book book : books) {
+            for (Author author : book.getAuthors()) {
+                if (!authorsWithBookTitles.containsKey(author)){
+                    authorsWithBookTitles.put(author, new HashSet<>());
+                }
+                authorsWithBookTitles.get(author).add(book.getTitle());
+            }
+        }
+        return authorsWithBookTitles;
     }
 }
