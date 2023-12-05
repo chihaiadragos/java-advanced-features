@@ -17,8 +17,6 @@ public class Main {
         car3.setName("RangeRover");
         car3.setColor("purple");
 
-        System.out.println(car1);
-        System.out.println(car2);
         System.out.println(car3);
     }
 }
