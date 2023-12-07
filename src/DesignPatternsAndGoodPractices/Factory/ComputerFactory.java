@@ -1,10 +1,10 @@
 package DesignPatternsAndGoodPractices.Factory;
 
 public class ComputerFactory {
-    public static Computer getComputer(String type, String RAM, String HDD) {
-        if ("PC".equalsIgnoreCase(type)) {
+    public static Computer getComputer(ComputerType type, String RAM, String HDD) {
+        if (ComputerType.PC.equals(type)) {
             return new PC(RAM, HDD);
-        } else if ("Server".equalsIgnoreCase(type)){
+        } else if (ComputerType.SERVER.equals(type)){
             return new Server(RAM, HDD);
         }
         return new Computer() {

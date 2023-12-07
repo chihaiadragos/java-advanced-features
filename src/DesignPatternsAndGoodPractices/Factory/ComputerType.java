@@ -1,6 +1,6 @@
 package DesignPatternsAndGoodPractices.Factory;
 
-public enum CalculatorType {
+public enum ComputerType {
     PC,
     SERVER;
 
