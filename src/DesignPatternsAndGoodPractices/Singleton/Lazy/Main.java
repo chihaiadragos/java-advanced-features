@@ -1,4 +1,4 @@
-package DesignPatternsAndGoodPractices.Singleton;
+package DesignPatternsAndGoodPractices.Singleton.Lazy;
 
 public class Main {
     public static void main(String[] args) {
