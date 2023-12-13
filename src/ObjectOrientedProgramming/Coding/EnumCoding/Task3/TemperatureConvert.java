@@ -21,7 +21,7 @@ public enum TemperatureConvert {
     static float convertTemperature(char inputTemperatureUnit, char outputTemperatureUnit, float temperature) throws ConvertorNotFoundException{
         for (TemperatureConvert conversionType : TemperatureConvert.values()) {
             if (conversionType.inputTemperatureUnit == Character.toUpperCase(inputTemperatureUnit) && conversionType.outputTemperatureUnit == Character.toUpperCase(outputTemperatureUnit)) {
-                return conversionType.converter.conver(temperature);
+                return conversionType.converter.convert(temperature);
             }
         }
         throw new ConvertorNotFoundException("Convertor for this input does not exist");
