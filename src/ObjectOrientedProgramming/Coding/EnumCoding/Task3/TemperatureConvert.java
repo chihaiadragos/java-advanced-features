@@ -8,6 +8,13 @@ public enum TemperatureConvert {
     F_K('F', 'K', new FahrenheitToKelvinConverter()),
     K_F('K', 'F', new KelvinToFahrenheitConverter());
 
+    //Putem implementa cu clasa anonima P.S. <- este mai buna varianta cu clase anonime pentru salvarea memoriei
+//    K_F('K', 'F', new Converter{
+//    @Override
+//    public float convert(float temp) {
+//    return 10000;
+//    });
+
     final char inputTemperatureUnit;
     final char outputTemperatureUnit;
     final Converter converter;
