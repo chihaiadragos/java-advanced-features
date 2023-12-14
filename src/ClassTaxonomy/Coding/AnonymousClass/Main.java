@@ -17,5 +17,12 @@ public class Main {
         System.out.println(dealership.getFinalPrice(fiat2));
         System.out.println(dealership.getFinalPrice(skoda1));
         System.out.println(dealership.getFinalPrice(skoda2));
+
+        dealership.negotiate(mercedes1, new Offer() {
+            @Override
+            public int getDiscount(Car car) {
+                return 5;
+            }
+        });
     }
 }

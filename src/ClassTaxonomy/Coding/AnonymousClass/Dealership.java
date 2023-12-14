@@ -45,17 +45,23 @@ public class Dealership {
     double getFinalPrice(Car car) {
         BrandOffer brandOffer = new BrandOffer();
         int brandOfferDiscount = brandOffer.getDiscount(car);
-        double carBrandDiscount = car.getPrice() - brandOfferDiscount / 100. * car.getPrice();
-        car.setPrice(car.getPrice() * (1 - (double) brandOfferDiscount / 100));
-        System.out.println("A fost aplicata oferta de Brand: " + brandOfferDiscount + "%");
+        double carBrandDiscount = brandOfferDiscount / 100. * car.getPrice();
+        System.out.println("A fost aplicata oferta de Brand: " + carBrandDiscount);
 //        car.setPrice(car.getPrice() * (1 - brandOffer.getDiscount(car) / 100.)); <- . asta stie sa imparta ca double si sa nu mai faca cast (double)
 
         DealerOffer dealerOffer = new DealerOffer();
         int dealerOfferDiscount = dealerOffer.getDiscount(car);
         car.setPrice(car.getPrice() - carBrandDiscount - dealerOfferDiscount);
-        System.out.println("A fost aplicata oferta de Dealer: " + brandOfferDiscount);
+        System.out.println("A fost aplicata oferta de Dealer: " + (double) dealerOfferDiscount);
 
         return car.getPrice();
+    }
+
+    void negotiate(Car car, Offer offer) {
+        int clientDiscount = offer.getDiscount(car);
+        car.setPrice(car.getPrice() * (1 - clientDiscount / 100.));
+        System.out.println("Clientul a negociat un discount de: " + clientDiscount + "%");
+        System.out.println("Pretul dupa oferta negociata de client: " + car.getPrice());
     }
 }
 
