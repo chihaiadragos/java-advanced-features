@@ -1,5 +1,8 @@
 package ClassTaxonomy.Coding.AnonymousClass;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Car mercedes1 = new Car(20000, CarType.MERCEDES, 2010);
@@ -24,5 +27,24 @@ public class Main {
                 return 5;
             }
         });
+        List<Car> carList = new ArrayList<>();
+        Car car1 = new Car(30000, CarType.MERCEDES, 2019);
+        Car car2 = new Car(50000, CarType.MERCEDES, 2021);
+        Car car3 = new Car(10000, CarType.FIAT, 2018);
+        Car car4 = new Car(20000, CarType.SKODA, 2019);
+
+        carList.add(car1);
+        carList.add(car2);
+        carList.add(car3);
+        carList.add(car4);
+
+        System.out.println();
+        System.out.println(carList);
+
+        carList.removeIf(car -> car.getPrice() > 25000);
+
+        System.out.println();
+        System.out.println(carList);
+
     }
 }
