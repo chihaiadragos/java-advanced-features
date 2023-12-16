@@ -8,10 +8,7 @@ public class Solution {
     }
     public static boolean isAnagram(String s, String t) {
 
-        if (sortString(s).equals(sortString(t)))
-            return true;
-
-        return false;
+        return sortString(s).equals(sortString(t));
 
     }
     public static String sortString(String stringToConvert)
