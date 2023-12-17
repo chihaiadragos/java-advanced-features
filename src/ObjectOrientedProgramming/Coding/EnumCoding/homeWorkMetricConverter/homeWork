@@ -1,0 +1,24 @@
+Create the MetricConverter enum class with constants :
+ - KM_M
+ - KM_CM
+ - KM_MM
+ - M_KM
+ - M_CM
+ - M_MM
+ - CM_KM
+ - CM_M
+ - CM_MM
+ - MM_K
+ - MM_M
+ - MM_CM
+Enum should adopt a constructor that includes three parameters:
+- input length unit
+- output length unit
+- the Converter interface instance (with a float convert(float lengthValueIn) method) the instance should define the necessary calculations for metric conversion
+
+The MetricConverter enum class should adopt the static convertLengthUnits method which will include the following params:
+- input length unit
+- output length unit
+- length value
+This method should return the converted value. To find the right constant from set of enum values,
+use the values() method.
