@@ -35,6 +35,10 @@ public class Manager extends Employee{
         return super.calculateSalary() + bonusManager;
     }
 
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Manager{");

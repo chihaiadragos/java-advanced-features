@@ -14,6 +14,10 @@ public class Employee {
         return baseSalary;
     }
 
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Employee{");

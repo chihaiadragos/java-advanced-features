@@ -29,5 +29,11 @@ public class Main {
         manager2.showSalaryOfEachEmployees();
         System.out.println();
         manager3.showSalaryOfEachEmployees();
+
+        System.out.println("=========================");
+        manager2.getEmployees().stream().filter(employee -> employee.getBaseSalary() > 700).forEach(System.out::println);
+        System.out.println("=========================");
+        manager2.showSalaryOfEachEmployees();
+
     }
 }
