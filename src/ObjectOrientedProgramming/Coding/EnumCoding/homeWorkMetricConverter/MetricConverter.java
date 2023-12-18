@@ -38,6 +38,42 @@ public enum MetricConverter {
         public float convert(float lengthValueIn) {
             return lengthValueIn * 100;
         }
+    }),
+    CM_KM("CM", "KM", new Converter() {
+        @Override
+        public float convert(float lengthValueIn) {
+            return lengthValueIn / 10000;
+        }
+    }),
+    CM_M("CM", "M", new Converter() {
+        @Override
+        public float convert(float lengthValueIn) {
+            return lengthValueIn / 100;
+        }
+    }),
+    CM_MM("CM", "MM", new Converter() {
+        @Override
+        public float convert(float lengthValueIn) {
+            return lengthValueIn * 10;
+        }
+    }),
+    MM_KM("MM", "KM", new Converter() {
+        @Override
+        public float convert(float lengthValueIn) {
+            return lengthValueIn / 1000000;
+        }
+    }),
+    MM_M("MM", "M", new Converter() {
+        @Override
+        public float convert(float lengthValueIn) {
+            return lengthValueIn / 1000;
+        }
+    }),
+    MM_CM("MM", "CM", new Converter() {
+        @Override
+        public float convert(float lengthValueIn) {
+            return lengthValueIn / 10;
+        }
     });
 
     final String inputLengthUnit;
