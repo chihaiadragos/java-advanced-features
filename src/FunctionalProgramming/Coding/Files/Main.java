@@ -49,7 +49,6 @@ public class Main {
                         Integer.parseInt(employeeInfoFromFile.get(2)));
                 manager.addEmployee(employee);
             }
-            //putem face asta cu streamuri?
             System.out.println(manager);
             scannerReadFile.close();
         } catch (FileNotFoundException e) {
