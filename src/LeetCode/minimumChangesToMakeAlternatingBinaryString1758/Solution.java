@@ -4,35 +4,62 @@ public class Solution {
     public static void main(String[] args) {
         String s = "10010100";
         System.out.println(minOperations(s));
-
     }
     public static int minOperations(String s) {
-        int min = 0;
-        char[] aux = s.toCharArray();
-        if (isAlternating(aux)) {
+        if (s.length() == 1) {
+            return 0;
+        }
+        int min1 = 0;
+        int min2 = 0;
+        char[] aux1 = s.toCharArray();
+        char[] aux2 = s.toCharArray();
+        if (isAlternating(aux1)) {
             return 0;
         }
         int i = 0;
-        while (!isAlternating(aux)) {
-            if (aux[i] == aux[i+1]) {
-                aux[i+1] = change(aux[i+1]);
-                min++;
-            }
-            i++;
-            if (i == aux.length-1) {
-                return min;
+        while (!isAlternating(aux1)) {
+            if (true) {
+                if (aux1[0] != '1'){
+                    min1++;
+                }
+                aux1[0] = '1';
+                if (aux1[i] == aux1[i + 1]) {
+                    aux1[i + 1] = change(aux1[i + 1]);
+                    min1++;
+                }
+                i++;
+                if (i == aux1.length - 1) {
+                    break;
+                }
+
             }
         }
-        return min;
+        int j =0;
+        while (!isAlternating(aux2)){
+            if (true){
+                if (aux2[0] != '0'){
+                    min2++;
+                }
+                aux2[0] = '0';
+                if (aux2[j] == aux2[j+1]) {
+                    aux2[j+1] = change(aux2[j+1]);
+                    min2++;
+                }
+                j++;
+                if (j == aux2.length-1) {
+                    break;
+                }
+            }
+        }
+
+        if (min1 < min2) {
+            return min1;
+        }
+        return min2;
+
     }
 
     public static boolean isAlternating(char[] s) {
-        if (s == null || s.length <= 1) {
-            return false;
-        }
-        if (s.length == 2) {
-            return true;
-        }
         for (int i = 0; i < s.length - 1; i++) {
             if (s[i] == s[i+1]) {
                 return false;
