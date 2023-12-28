@@ -2,6 +2,7 @@ package AdvancedCodingIndividualExercises.Exercise3;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.OptionalDouble;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,9 +10,10 @@ public class Main {
         System.out.println(average(list));
     }
     public static double average(List<Integer> list) {
-        return list.stream()
-                .mapToInt(i -> i)
-                .average()
-                .getAsDouble();
+        OptionalDouble optionalDouble = list.stream().mapToInt(i -> i).average();
+        if (optionalDouble.isPresent()) {
+            return optionalDouble.getAsDouble();
+        }
+        return 0.;
     }
 }
