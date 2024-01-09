@@ -20,6 +20,10 @@ public class Employee {
         return salary;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Employee{");
