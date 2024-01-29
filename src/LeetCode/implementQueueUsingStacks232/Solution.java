@@ -4,7 +4,7 @@ import java.util.Stack;
 
 class MyQueue {
     public static void main(String[] args) {
-        
+
     }
     private Stack<Integer> s1;
     private Stack<Integer> s2;
