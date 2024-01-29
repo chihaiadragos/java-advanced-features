@@ -5,7 +5,7 @@ import java.util.Set;
 
 class Solution {
     public static void main(String[] args) {
-        System.out.println(pseudoPalindromicPaths());
+//        System.out.println(pseudoPalindromicPaths());
     }
     static int count = 0;
     public static int pseudoPalindromicPaths (TreeNode root) {
