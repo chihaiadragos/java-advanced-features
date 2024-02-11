@@ -3,7 +3,11 @@ package LeetCode.perfectSquares279;
 import java.util.Arrays;
 
 class Solution {
-    public int numSquares(int n) {
+    public static void main(String[] args) {
+        System.out.println(numSquares(12));
+        System.out.println(numSquares(13));
+    }
+    public static int numSquares(int n) {
         int[] dp = new int[n + 1];
         Arrays.fill(dp, Integer.MAX_VALUE);
         dp[0] = 0;
