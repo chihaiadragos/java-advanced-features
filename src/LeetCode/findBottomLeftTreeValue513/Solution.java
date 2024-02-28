@@ -4,6 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Solution {
+    public static void main(String[] args) {
+        
+    }
     public int findBottomLeftValue(TreeNode root) {
         int last = 0;
         Queue<TreeNode> q = new LinkedList<>();
