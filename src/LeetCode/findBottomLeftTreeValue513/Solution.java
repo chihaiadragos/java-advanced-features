@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class Solution {
     public static void main(String[] args) {
-        
+        System.out.println("a");
     }
     public int findBottomLeftValue(TreeNode root) {
         int last = 0;
