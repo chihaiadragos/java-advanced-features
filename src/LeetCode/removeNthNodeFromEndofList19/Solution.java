@@ -2,7 +2,7 @@ package LeetCode.removeNthNodeFromEndofList19;
 
 class Solution {
     public static void main(String[] args) {
-        
+
     }
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         int length = findLength(head);
