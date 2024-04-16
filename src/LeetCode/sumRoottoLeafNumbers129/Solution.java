@@ -1,11 +1,14 @@
 package LeetCode.sumRoottoLeafNumbers129;
 
 class Solution {
-    public int sumNumbers(TreeNode root) {
+    public static void main(String[] args) {
+        System.out.println(sumNumbers(null));
+    }
+    public static int sumNumbers(TreeNode root) {
         return dfs(root, 0);
     }
 
-    private int dfs(TreeNode node, int pathSum) {
+    private static int dfs(TreeNode node, int pathSum) {
         if (node == null)
             return 0;
 
