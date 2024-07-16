@@ -6,6 +6,9 @@ import java.util.Map;
 import java.util.Set;
 
 class Solution {
+    public static void main(String[] args) {
+        System.out.println();
+    }
       public static class TreeNode {
       int val;
       TreeNode left;
@@ -18,7 +21,7 @@ class Solution {
           this.right = right;
       }
   }
-    public TreeNode createBinaryTree(int[][] descriptions) {
+    public static TreeNode createBinaryTree(int[][] descriptions) {
         Set<Integer> childrenSet = new HashSet<>();
         Map<Integer, int[]> childrenHashmap = new HashMap<>();
 
@@ -48,7 +51,7 @@ class Solution {
         return constructTree(headNodeVal, childrenHashmap);
     }
 
-    private TreeNode constructTree(int curNodeVal, Map<Integer, int[]> childrenHashmap) {
+    private static TreeNode constructTree(int curNodeVal, Map<Integer, int[]> childrenHashmap) {
         TreeNode newNode = new TreeNode(curNodeVal);
         if (childrenHashmap.containsKey(curNodeVal)) {
             int[] children = childrenHashmap.get(curNodeVal);
